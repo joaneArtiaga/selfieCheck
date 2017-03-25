@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "847246502260",
+    "firebase_url": "https://selficheck-b3fac.firebaseio.com",
+    "project_id": "selficheck-b3fac",
+    "storage_bucket": "selficheck-b3fac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847246502260:android:1e9b636d9924eb83",
+        "android_client_info": {
+          "package_name": "com.training.android.selficheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847246502260-gj1g9tn71p5462ho1o79mqdofvkhdjct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.training.android.selficheck",
+            "certificate_hash": "566972290475d2e99c19d832d8ad5b4e28a279b2"
+          }
+        },
+        {
+          "client_id": "847246502260-0ihssmjssje5tc8fultcedracatmlvv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlQlxsHcjb3rmGLOSnyKQcmiutT45Qo8A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847246502260-0ihssmjssje5tc8fultcedracatmlvv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
