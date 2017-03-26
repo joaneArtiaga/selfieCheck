@@ -66,13 +66,5 @@ public class SubjectsData extends Subj_StudentsData {
         CourseRoom = courseRoom;
     }
 
-    @Override
-    public String getDailyPassword() {
-        return super.getDailyPassword();
-    }
 
-    @Override
-    public void setDailyPassword(String dailyPassword) {
-        super.setDailyPassword(dailyPassword);
-    }
 }

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +29,7 @@ public class StudentMenu extends AppCompatActivity {
     private ArrayList<Subj_StudentsData> mSubjStudents = new ArrayList<>();
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mSubjReference, mSubjStudReference;
-    private Subj_StudentsData subj_studentsData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class StudentMenu extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    subj_studentsData = postSnapshot.getValue(Subj_StudentsData.class);
+                    Subj_StudentsData subj_studentsData = postSnapshot.getValue(Subj_StudentsData.class);
                     mSubjStudents.add(subj_studentsData);
                 }
 
