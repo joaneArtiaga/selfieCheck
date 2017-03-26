@@ -104,11 +104,18 @@ public class StudentMenu extends AppCompatActivity implements GoogleApiClient.On
                 for(DataSnapshot postSnapshot:dataSnapshot.getChildren()){
                     UserData modelUser = postSnapshot.getValue(UserData.class);
                         Log.d("current email", email);
-                    if(modelUser.getEmail()==email){
+
+                    if(modelUser.getEmail().equals(email)){
+                        Log.d("adfasjkdfhas", "lalalla");
+
                         if(modelUser.getRole().equals("Student")){
+
                             Log.d("the same email","student");
+
                         }else if(modelUser.getRole().equals("Teacher")){
+
                             Log.d("the same email","teacher");
+
                         }
                     }
 
