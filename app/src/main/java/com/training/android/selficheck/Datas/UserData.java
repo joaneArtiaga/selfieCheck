@@ -9,15 +9,22 @@ public class UserData {
     private String Email;
     private String Name;
     private String Role;
+    private Long Id;
+
 
     public UserData(){
 
     }
 
-    public UserData(String email, String name, String role) {
+    public UserData(String email, String name, String role, Long Id) {
         Email = email;
         Name = name;
         Role = role;
+        this.Id = Id;
+    }
+
+    public Long getId() {
+        return Id;
     }
 
     public String getEmail() {
@@ -30,6 +37,10 @@ public class UserData {
 
     public String getRole() {
         return Role;
+    }
+
+    public void setId(Long Id) {
+        this.Id = Id;
     }
 
     public void setEmail(String email) {

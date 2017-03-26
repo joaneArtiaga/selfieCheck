@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Subject_details" />
+        <activity android:name=".NewAcc"></activity>
     </application>
 
 </manifest>

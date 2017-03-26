@@ -54,7 +54,7 @@ public class StudentMenu extends AppCompatActivity implements GoogleApiClient.On
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
+    private boolean minus;
     private Bundle bundle;
 
     private String email;
@@ -64,6 +64,7 @@ public class StudentMenu extends AppCompatActivity implements GoogleApiClient.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_menu);
 
+        minus = true;
         this.bundle = savedInstanceState;
         mrvSubjList = (RecyclerView) findViewById(R.id.rvSubjList);
 
@@ -89,6 +90,8 @@ public class StudentMenu extends AppCompatActivity implements GoogleApiClient.On
                                             new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()))
                                     .build(), RC_SIGN_IN);
                 }
+
+
             }
         };
         //Firebase DATABASE
@@ -100,14 +103,13 @@ public class StudentMenu extends AppCompatActivity implements GoogleApiClient.On
         mAccReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 for(DataSnapshot postSnapshot:dataSnapshot.getChildren()){
                     UserData modelUser = postSnapshot.getValue(UserData.class);
                         Log.d("current email", email);
 
                     if(modelUser.getEmail().equals(email)){
                         Log.d("adfasjkdfhas", "lalalla");
-
+                        minus=false;
                         if(modelUser.getRole().equals("Student")){
 
                             Log.d("the same email","student");
@@ -117,10 +119,22 @@ public class StudentMenu extends AppCompatActivity implements GoogleApiClient.On
                             Log.d("the same email","teacher");
 
                         }
+                        break;
                     }
-
                     Log.d("Model User", "Email: "+modelUser.getEmail()+", Name:"+modelUser.getName()+", Role:"+modelUser.getRole());
                 }
+
+                if(dataSnapshot.hasChild(email)){
+                    Log.d("Exists", "false");
+                }else{
+                    Log.d("Exists", "true");
+                }
+//                if(minus){
+//                    Log.d("Minus", "true");
+//                    Intent intent = new Intent(StudentMenu.this, NewAcc.class);
+//                    startActivity(intent);
+//                }
+
             }
 
             @Override
